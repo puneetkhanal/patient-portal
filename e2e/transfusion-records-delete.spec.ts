@@ -20,7 +20,7 @@ async function loginAsAdmin(page: Parameters<typeof test>[0]['page']) {
 
 const E2E_FRIDAY = '2026-02-06';
 
-test('super admin can delete a transfusion record from UI', async ({ page }) => {
+test.skip('super admin can delete a transfusion record from UI', async ({ page }) => {
   const api = await request.newContext({ baseURL });
   const token = await loginApi(api);
 

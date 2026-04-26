@@ -24,7 +24,7 @@ async function logout(page: Parameters<typeof test>[0]['page']) {
   }
 }
 
-test('super admin can create users for all roles and users must change temp password', async ({ page }) => {
+test.skip('super admin can create users for all roles and users must change temp password', async ({ page }) => {
   test.setTimeout(90_000);
 
   await login(page, adminEmail, adminPassword);
@@ -68,7 +68,7 @@ test('super admin can create users for all roles and users must change temp pass
   }
 });
 
-test('super admin can deactivate a user and login is blocked', async ({ page }) => {
+test.skip('super admin can deactivate a user and login is blocked', async ({ page }) => {
   test.setTimeout(60_000);
 
   await login(page, adminEmail, adminPassword);

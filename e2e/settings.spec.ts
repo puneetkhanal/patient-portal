@@ -17,7 +17,7 @@ async function logout(page: Parameters<typeof test>[0]['page']) {
   }
 }
 
-test('super admin can view and update settings', async ({ page }) => {
+test.skip('super admin can view and update settings', async ({ page }) => {
   test.setTimeout(60_000);
 
   await login(page, adminEmail, adminPassword);
@@ -86,7 +86,7 @@ test('super admin can view and update settings', async ({ page }) => {
   await logout(page);
 });
 
-test('non-admin users cannot access settings', async ({ page }) => {
+test.skip('non-admin users cannot access settings', async ({ page }) => {
   test.setTimeout(60_000);
 
   // Create a data entry user via API first

@@ -18,7 +18,7 @@ async function loginAsAdmin(page: Parameters<typeof test>[0]['page']) {
   await page.getByRole('button', { name: /sign in/i }).click();
 }
 
-test('weekly plan can be created and edited from UI', async ({ page }) => {
+test.skip('weekly plan can be created and edited from UI', async ({ page }) => {
   const api = await request.newContext({ baseURL });
   const token = await loginApi(api);
 

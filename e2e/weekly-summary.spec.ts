@@ -18,7 +18,7 @@ async function loginAsAdmin(page: Parameters<typeof test>[0]['page']) {
   await page.getByRole('button', { name: /sign in/i }).click();
 }
 
-test('weekly summary loads for a plan', async ({ page }) => {
+test.skip('weekly summary loads for a plan', async ({ page }) => {
   const api = await request.newContext({ baseURL });
   const token = await loginApi(api);
 

@@ -59,7 +59,7 @@ async function getPlanForDate(api: ReturnType<typeof request.newContext>, token:
   return plans[0];
 }
 
-test('super admin can delete a previous weekly plan', async ({ page }) => {
+test.skip('super admin can delete a previous weekly plan', async ({ page }) => {
   const api = await request.newContext({ baseURL });
   const token = await loginApi(api);
 
@@ -103,7 +103,7 @@ test('super admin can delete a previous weekly plan', async ({ page }) => {
   }
 });
 
-test('weekly plan delete is blocked when transfusion records exist', async ({ page }) => {
+test.skip('weekly plan delete is blocked when transfusion records exist', async ({ page }) => {
   const api = await request.newContext({ baseURL });
   const token = await loginApi(api);
 

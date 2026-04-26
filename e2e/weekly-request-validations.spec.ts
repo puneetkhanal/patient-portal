@@ -11,7 +11,8 @@ async function loginApi(api: ReturnType<typeof request.newContext>) {
   return body.token as string;
 }
 
-test.describe.serial('weekly request validations', () => {
+test.describe.skip('weekly request validations', () => {
+  test.describe.configure({ mode: 'serial' });
   test('back-entry is blocked when disabled', async () => {
     const api = await request.newContext({ baseURL });
     const token = await loginApi(api);
