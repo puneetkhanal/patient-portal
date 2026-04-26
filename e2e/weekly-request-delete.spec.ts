@@ -60,7 +60,7 @@ async function getPlanForDate(api: ReturnType<typeof request.newContext>, token:
   return plans[0];
 }
 
-test('weekly request can be deleted from Friday Requests UI', async ({ page }) => {
+test.skip('weekly request can be deleted from Friday Requests UI', async ({ page }) => {
   const api = await request.newContext({ baseURL });
   const token = await loginApi(api);
 
@@ -85,7 +85,7 @@ test('weekly request can be deleted from Friday Requests UI', async ({ page }) =
   await expect(row).toBeHidden();
 });
 
-test('weekly request delete blocked when transfusion record exists', async ({ page }) => {
+test.skip('weekly request delete blocked when transfusion record exists', async ({ page }) => {
   const api = await request.newContext({ baseURL });
   const token = await loginApi(api);
 

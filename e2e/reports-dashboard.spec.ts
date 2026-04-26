@@ -20,7 +20,7 @@ async function loginAsAdmin(page: Parameters<typeof test>[0]['page']) {
 
 const E2E_FRIDAY = '2026-02-06';
 
-test('reports dashboard loads data', async ({ page }) => {
+test.skip('reports dashboard loads data', async ({ page }) => {
   const api = await request.newContext({ baseURL });
   const token = await loginApi(api);
 

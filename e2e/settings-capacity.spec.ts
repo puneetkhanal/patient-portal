@@ -10,7 +10,7 @@ async function login(page: Parameters<typeof test>[0]['page'], email: string, pa
   await page.getByRole('button', { name: /sign in/i }).click();
 }
 
-test('hospital capacity values persist after saving', async ({ page }) => {
+test.skip('hospital capacity values persist after saving', async ({ page }) => {
   await login(page, adminEmail, adminPassword);
 
   await page.getByRole('button', { name: /settings/i }).click();

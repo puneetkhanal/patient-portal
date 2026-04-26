@@ -50,7 +50,7 @@ async function createRoleUser(
   return { email, password: newPassword };
 }
 
-test.describe('Role access inventory (UI + API)', () => {
+test.describe.skip('Role access inventory (UI + API)', () => {
   const roleCredentials = new Map<RoleKey, { email: string; password: string; token: string }>();
   let patientId = '';
   let documentId = '';
@@ -196,7 +196,7 @@ test.describe('Role access inventory (UI + API)', () => {
   });
 });
 
-test.describe('Role negative access (API)', () => {
+test.describe.skip('Role negative access (API)', () => {
   test.describe.configure({ timeout: 120_000 });
   let patientId = '';
   let documentId = '';

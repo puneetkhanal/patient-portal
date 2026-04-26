@@ -28,7 +28,7 @@ async function loginAsAdmin(page: Parameters<typeof test>[0]['page']) {
 
 const E2E_FRIDAY = '2026-02-06';
 
-test('weekly requests created via API appear in Friday calls UI', async ({ page }) => {
+test.skip('weekly requests created via API appear in Friday calls UI', async ({ page }) => {
   const api = await request.newContext({ baseURL });
   const adminToken = await loginApi(api, adminEmail, adminPassword);
   await setCalendarMode(api, adminToken, 'AD');

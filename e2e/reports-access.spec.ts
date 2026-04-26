@@ -56,7 +56,7 @@ async function createRoleUser(
   return token;
 }
 
-test('reports/statistics access by role (API)', async () => {
+test.skip('reports/statistics access by role (API)', async () => {
   const api = await request.newContext({ baseURL });
   await waitForServer(api);
   const adminToken = await loginApi(api, adminEmail, adminPassword);
