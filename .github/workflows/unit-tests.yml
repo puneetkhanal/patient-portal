@@ -1,0 +1,33 @@
+name: Unit Tests (Self-Hosted)
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+  workflow_dispatch: {}
+
+jobs:
+  unit-tests:
+    name: Run unit tests
+    runs-on: [self-hosted, linux, ubuntu]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install client dependencies
+        run: npm install --prefix client
+
+      - name: Run unit tests
+        env:
+          VITEST: "1"
+        run: npm test

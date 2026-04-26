@@ -1,0 +1,123 @@
+.weekly-summary-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+.weekly-summary-list {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+  margin-bottom: 24px;
+}
+
+.weekly-summary-list .list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.weekly-summary-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.weekly-summary-list th,
+.weekly-summary-list td {
+  padding: 10px;
+  border-bottom: 1px solid #eef1f6;
+  text-align: left;
+}
+
+.weekly-summary-list .mono {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #4b5565;
+}
+
+.weekly-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.summary-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.summary-controls input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(16, 24, 40, 0.15);
+}
+
+.summary-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+}
+
+.summary-meta {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.summary-grid table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.summary-grid td {
+  padding: 8px 6px;
+  border-bottom: 1px solid #eef1f6;
+}
+
+.summary-email {
+  margin-top: 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.summary-email input {
+  width: 100%;
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(16, 24, 40, 0.15);
+}
+
+@media (max-width: 960px) {
+  .weekly-summary-header {
+    flex-direction: column;
+  }
+
+  .summary-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

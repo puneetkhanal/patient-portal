@@ -1,0 +1,44 @@
+This is a generic patient portal app. There is already user repository available.
+Create patient reppository similar to that, and rest api to insert, update and delete patient
+details in postgres database. Write integration test case by invoking rest api.
+
+So There will be patient registration form. Upon entering the fields in that patient registration form
+patient will be created. 
+
+Patient registration form has following deatils:
+
+Registered date 
+Registered no
+Membership Type
+Patients Name
+DOB
+Gender
+BloodGroup
+Diagnosed
+Diagnosed date
+Diagnoesd by
+Diagnosed at
+First Transfusion
+Number of Transfusion
+Complications
+Iron chelation
+Health Condition
+Other medications
+Immunizations BCG/OPV/DPV 1st 2nd 3rd
+Measles 1st 2nd 3rd
+Hepatitis 1st 2nd 3rd
+Address temporary
+Mobile
+Address Permanent
+Mobile
+Father
+Birth Place
+Migration History
+Mother
+Birth Place
+Migration History
+Other Thalassameic Family
+Occupation - Father
+Occupation - Mother
+
+After submitting the patient registration form it should create patient entry in patient database..

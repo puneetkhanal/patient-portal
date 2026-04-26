@@ -1,0 +1,20 @@
+# Client Development Dockerfile
+FROM node:24-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy source files
+COPY . .
+
+# Expose Vite port
+EXPOSE 5173
+
+# Start Vite dev server with host flag for Docker
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+

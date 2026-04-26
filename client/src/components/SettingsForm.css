@@ -1,0 +1,157 @@
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.settings-form__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.settings-form__header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.settings-form__back {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.settings-form__card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+}
+
+.settings-form__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.settings-form__full {
+  grid-column: 1 / -1;
+}
+
+.settings-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.settings-form input,
+.settings-form select,
+.settings-form textarea {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: white;
+  font-size: 14px;
+}
+
+.settings-form__checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-form__recipients {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings-form__capacity {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings-form__capacity-note {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.settings-form__capacity-table {
+  display: grid;
+  gap: 10px;
+}
+
+.settings-form__capacity-row {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(7, minmax(56px, 1fr));
+  gap: 8px;
+  align-items: center;
+}
+
+.settings-form__capacity-header {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.settings-form__capacity-name {
+  font-weight: 600;
+}
+
+.settings-form__capacity-row input {
+  text-align: center;
+}
+
+.settings-form__section-title {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.settings-form__recipient {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  align-items: center;
+}
+
+.settings-form__remove,
+.settings-form__add,
+.settings-form__submit {
+  background: #ff6b6b;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.settings-form__add {
+  background: #2f8cff;
+  align-self: flex-start;
+}
+
+.settings-form__submit {
+  width: fit-content;
+  margin-top: 20px;
+  background: #16a34a;
+}
+
+.settings-form__error {
+  margin-top: 16px;
+  color: #ffb3b3;
+}
+
+.settings-form__success {
+  margin-top: 16px;
+  color: #a7f3d0;
+}

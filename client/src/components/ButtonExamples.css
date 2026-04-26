@@ -1,0 +1,35 @@
+.button-examples {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.button-examples h2 {
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.button-examples section {
+  margin-bottom: 2rem;
+}
+
+.button-examples h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.button-group .btn {
+  flex: 0 0 auto;
+}

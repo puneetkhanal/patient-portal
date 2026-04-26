@@ -1,0 +1,79 @@
+# Patient Portal Demo (with MongoDB)
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: patient-portal-app
+    restart: unless-stopped
+    platform: linux/amd64
+    command: sh -c "npm install && npm install --prefix client && npm run dev"
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - DB_HOST=mongodb
+      - DB_PORT=27017
+      - DB_NAME=patient_portal
+      - JWT_SECRET=development-only-jwt-secret
+      - JWT_EXPIRES_IN=7d
+      - CHOKIDAR_USEPOLLING=1
+      - WATCHPACK_POLLING=true
+    ports:
+      - "3000:3000"
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/client/node_modules
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - patient-portal-network
+
+  mongodb:
+    image: mongo:7.0
+    container_name: patient-portal-mongodb
+    restart: unless-stopped
+    command: >
+      mongod
+      --bind_ip_all
+      --logpath /proc/1/fd/1
+      --logappend
+      --quiet
+      --setParameter logComponentVerbosity='{ "storage": { "verbosity": 0 } }'
+    environment:
+      - MONGO_INITDB_DATABASE=patient_portal
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - patient-portal-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  patient-portal-network:
+    driver: bridge

@@ -1,0 +1,77 @@
+/* Import Button Theme System */
+@import './components/ButtonTheme.css';
+@import 'react-nepali-datetime-picker/dist/style.css';
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f6f8fb;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f2f4f8;
+  --bg-surface: #f9fafb;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --focus-ring: rgba(6, 182, 212, 0.2);
+  --accent-cyan: #06b6d4;
+  --accent-magenta: #db2777;
+  --accent-orange: #f97316;
+  --gradient-primary: linear-gradient(135deg, #06b6d4 0%, #db2777 100%);
+  --gradient-glow: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
+  --border-color: rgba(15, 23, 42, 0.08);
+  --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-glow: 0 0 40px rgba(6, 182, 212, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+code, .mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+::selection {
+  background: var(--accent-cyan);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
