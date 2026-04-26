@@ -1,0 +1,25 @@
+import { Pool, QueryResult } from 'pg';
+import { getPool } from '../config.js';
+
+export abstract class BaseRepository {
+  protected pool: Pool;
+
+  constructor(pool?: Pool) {
+    this.pool = pool || getPool();
+  }
+
+  protected async query(sql: string, params?: unknown[]): Promise<QueryResult> {
+    return this.pool.query(sql, params);
+  }
+
+  protected async queryOne<T = any>(sql: string, params?: unknown[]): Promise<T | null> {
+    const result = await this.query(sql, params);
+    return (result.rows[0] as T) || null;
+  }
+
+  protected async queryMany<T = any>(sql: string, params?: unknown[]): Promise<T[]> {
+    const result = await this.query(sql, params);
+    return result.rows as T[];
+  }
+}
+

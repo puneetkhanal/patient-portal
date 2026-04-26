@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": ".",
+    "declaration": true,
+    "resolveJsonModule": true
+  },
+  "include": ["server/index.ts", "server/app.ts", "server/src/**/*.ts", "server/src/**/*.d.ts"],
+  "exclude": ["node_modules", "client", "dist", "server/tests", "server/src/db/index.ts", "server/src/db/schema.ts", "server/src/db/repositories"]
+}

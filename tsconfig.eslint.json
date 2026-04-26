@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.server.json",
+  "include": [
+    "server/**/*.ts",
+    "server/**/*.tsx",
+    "server/tests/**/*.ts",
+    "vitest.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "client"
+  ]
+}

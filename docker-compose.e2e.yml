@@ -1,0 +1,65 @@
+# E2E test stack: same app image as unified, but run built server (no npm install/dev).
+# App is ready in seconds; avoids long wait and stuck container on stop.
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: patient-portal-app
+    restart: "no"
+    platform: linux/amd64
+    # Use image CMD (npx tsx server/index.ts) - no override, so no npm install / dev
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DB_HOST=mongodb
+      - DB_PORT=27017
+      - DB_NAME=patient_portal
+      - JWT_SECRET=e2e-only-jwt-secret
+      - JWT_EXPIRES_IN=7d
+      - ADMIN_EMAIL=admin@example.com
+      - ADMIN_PASSWORD=123456
+      - ADMIN_MUST_CHANGE_PASSWORD=false
+    ports:
+      - "3000:3000"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    stop_grace_period: 10s
+    networks:
+      - patient-portal-network
+
+  mongodb:
+    image: mongo:7.0
+    container_name: patient-portal-mongodb
+    restart: "no"
+    command: >
+      mongod
+      --bind_ip_all
+      --logpath /proc/1/fd/1
+      --logappend
+      --quiet
+      --setParameter logComponentVerbosity='{ "storage": { "verbosity": 0 } }'
+    environment:
+      - MONGO_INITDB_DATABASE=patient_portal
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - patient-portal-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  patient-portal-network:
+    driver: bridge

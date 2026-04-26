@@ -1,0 +1,38 @@
+# Development Docker Compose with hot reloading
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.server.dev
+    container_name: learning-backend-dev
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./server:/app/server:ro
+    networks:
+      - learning-network-dev
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    container_name: learning-frontend-dev
+    environment:
+      - VITE_API_URL=http://localhost:3001
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client/src:/app/src:ro
+      - ./client/index.html:/app/index.html:ro
+    depends_on:
+      - backend
+    networks:
+      - learning-network-dev
+
+networks:
+  learning-network-dev:
+    driver: bridge
+
