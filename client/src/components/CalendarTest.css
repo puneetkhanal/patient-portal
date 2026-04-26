@@ -1,0 +1,53 @@
+.calendar-test {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.calendar-test__header h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.calendar-test__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.calendar-test__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.calendar-test__controls label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.calendar-test__controls select {
+  min-width: 160px;
+}
+
+.calendar-test__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+.calendar-test__card label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.calendar-test__value {
+  font-size: 14px;
+  color: var(--text-muted);
+}

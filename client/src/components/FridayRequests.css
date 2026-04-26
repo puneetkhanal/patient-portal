@@ -1,0 +1,372 @@
+.friday-requests-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  color: #1b1f2a;
+}
+
+.friday-requests-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.friday-requests-header h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #141a26;
+}
+
+.friday-requests-subtitle {
+  margin: 8px 0 0;
+  color: #4b5565;
+}
+
+.friday-requests-week {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 240px;
+}
+
+.friday-requests-week input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(16, 24, 40, 0.15);
+  background: #fff;
+}
+
+.week-range {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.friday-requests-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+  margin-bottom: 32px;
+}
+
+.friday-plan-link {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+  margin-bottom: 24px;
+}
+
+.plan-link-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.plan-link-right {
+  display: flex;
+  align-items: center;
+}
+
+.friday-plan-link select {
+  min-width: 240px;
+  border-radius: 10px;
+  border: 1px solid rgba(16, 24, 40, 0.15);
+  padding: 10px 12px;
+  background: #fff;
+}
+
+.plan-link-label {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.friday-availability-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+  margin-bottom: 24px;
+}
+
+.friday-email-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+  margin-bottom: 24px;
+}
+
+.email-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 999;
+}
+
+.email-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 24px 40px rgba(15, 23, 42, 0.2);
+  max-width: 900px;
+  width: 100%;
+  max-height: 85vh;
+  overflow: auto;
+}
+
+.email-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.email-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.email-header p {
+  margin: 4px 0 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.email-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.email-textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 24, 40, 0.12);
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  background: #f9fafb;
+}
+
+.availability-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.availability-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.availability-header p {
+  margin: 4px 0 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.availability-table th {
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.availability-table td {
+  vertical-align: top;
+}
+
+.availability-date {
+  display: block;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.availability-hospital {
+  font-weight: 600;
+  color: #1f2937;
+  min-width: 160px;
+}
+
+.availability-cell {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 8px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.availability-cell.is-available {
+  background: #dcfce7;
+}
+
+.availability-cell.is-full {
+  background: #fee2e2;
+}
+
+.availability-count {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.availability-meta {
+  display: grid;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.friday-requests-card h2 {
+  margin: 0 0 16px;
+  font-size: 1.2rem;
+}
+
+.friday-requests-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.form-row.full-width {
+  grid-template-columns: 1fr;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-weight: 600;
+  color: #263046;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  border-radius: 10px;
+  border: 1px solid rgba(16, 24, 40, 0.15);
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+.availability-helper {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.form-field input[readonly] {
+  background: #f5f7fb;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.friday-requests-table {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.friday-requests-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.friday-requests-table th,
+.friday-requests-table td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid #eef1f6;
+  font-size: 0.95rem;
+}
+
+.friday-requests-table td:last-child {
+  text-align: right;
+}
+
+.patient-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.patient-name {
+  font-weight: 600;
+}
+
+.patient-reg {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.status-pill {
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.success-message,
+.warning-message {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.success-message {
+  background: #ecfdf3;
+  color: #047857;
+}
+
+.warning-message {
+  background: #fff7ed;
+  color: #b45309;
+}
+
+@media (max-width: 960px) {
+  .friday-requests-header {
+    flex-direction: column;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

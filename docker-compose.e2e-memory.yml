@@ -1,0 +1,26 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.e2e
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    container_name: patient-portal-e2e-app
+    restart: "no"
+    platform: linux/amd64
+    command: npx tsx server/src/e2eServer.ts
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - JWT_SECRET=e2e-only-jwt-secret
+      - JWT_EXPIRES_IN=7d
+      - ADMIN_MUST_CHANGE_PASSWORD=false
+      - MONGOMS_VERSION=4.4.25
+    ports:
+      - "3000:3000"
+    networks:
+      - patient-portal-e2e
+
+networks:
+  patient-portal-e2e:
+    driver: bridge

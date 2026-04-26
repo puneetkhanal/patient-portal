@@ -1,0 +1,21 @@
+# Backend Development Dockerfile
+FROM node:24-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install all dependencies (including dev)
+RUN npm ci
+
+# Copy server source
+COPY server ./server
+COPY tsconfig.server.json ./
+
+# Expose port
+EXPOSE 3001
+
+# Start with watch mode
+CMD ["npx", "tsx", "watch", "server/index.ts"]
+

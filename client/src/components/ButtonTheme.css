@@ -1,0 +1,340 @@
+/* Button Theme System - Easy Customization Guide */
+/*
+  To change the button theme, modify the CSS custom properties below.
+  All button styles will automatically update to use your new theme.
+*/
+
+/* ===== BUTTON THEME VARIABLES ===== */
+:root {
+  /* Primary Button Colors */
+  --btn-primary-bg: var(--gradient-primary);
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-shadow: 0 8px 20px rgba(6, 182, 212, 0.25);
+  --btn-primary-hover-transform: translateY(-2px);
+
+  /* Secondary Button Colors */
+  --btn-secondary-bg: var(--bg-card);
+  --btn-secondary-text: var(--text-secondary);
+  --btn-secondary-border: var(--border-color);
+  --btn-secondary-hover-bg: var(--bg-card-hover);
+  --btn-secondary-hover-text: var(--text-primary);
+
+  /* Success Button Colors */
+  --btn-success-bg: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --btn-success-text: #ffffff;
+  --btn-success-hover-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
+
+  /* Danger Button Colors */
+  --btn-danger-bg: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  --btn-danger-text: #ffffff;
+  --btn-danger-hover-shadow: 0 8px 20px rgba(239, 68, 68, 0.25);
+
+  /* Warning Button Colors */
+  --btn-warning-bg: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --btn-warning-text: #ffffff;
+  --btn-warning-hover-shadow: 0 8px 20px rgba(245, 158, 11, 0.25);
+
+  /* Info Button Colors */
+  --btn-info-bg: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --btn-info-text: #ffffff;
+  --btn-info-hover-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+
+  /* Button Dimensions */
+  --btn-padding: 0.75rem 1.5rem;
+  --btn-border-radius: 8px;
+  --btn-font-size: 1rem;
+  --btn-font-weight: 500;
+  --btn-transition: all 0.2s ease;
+
+  /* Button States */
+  --btn-disabled-opacity: 0.6;
+  --btn-focus-ring: 0 0 0 3px var(--focus-ring);
+}
+
+/* ===== BASE BUTTON STYLES ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-border-radius);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--btn-transition);
+  text-decoration: none;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:focus-visible {
+  box-shadow: var(--btn-focus-ring);
+}
+
+.btn:disabled {
+  opacity: var(--btn-disabled-opacity);
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ===== PRIMARY BUTTON ===== */
+.btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: var(--btn-primary-hover-transform);
+  box-shadow: var(--btn-primary-hover-shadow);
+}
+
+/* ===== SECONDARY BUTTON ===== */
+.btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--btn-secondary-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--btn-secondary-hover-bg);
+  color: var(--btn-secondary-hover-text);
+}
+
+/* ===== SUCCESS BUTTON ===== */
+.btn-success {
+  background: var(--btn-success-bg);
+  color: var(--btn-success-text);
+  border: none;
+}
+
+.btn-success:hover:not(:disabled) {
+  transform: var(--btn-primary-hover-transform);
+  box-shadow: var(--btn-success-hover-shadow);
+}
+
+/* ===== DANGER BUTTON ===== */
+.btn-danger {
+  background: var(--btn-danger-bg);
+  color: var(--btn-danger-text);
+  border: none;
+}
+
+.btn-danger:hover:not(:disabled) {
+  transform: var(--btn-primary-hover-transform);
+  box-shadow: var(--btn-danger-hover-shadow);
+}
+
+/* ===== WARNING BUTTON ===== */
+.btn-warning {
+  background: var(--btn-warning-bg);
+  color: var(--btn-warning-text);
+  border: none;
+}
+
+.btn-warning:hover:not(:disabled) {
+  transform: var(--btn-primary-hover-transform);
+  box-shadow: var(--btn-warning-hover-shadow);
+}
+
+/* ===== INFO BUTTON ===== */
+.btn-info {
+  background: var(--btn-info-bg);
+  color: var(--btn-info-text);
+  border: none;
+}
+
+.btn-info:hover:not(:disabled) {
+  transform: var(--btn-primary-hover-transform);
+  box-shadow: var(--btn-info-hover-shadow);
+}
+
+/* ===== BUTTON SIZES ===== */
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.btn-xl {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.25rem;
+}
+
+/* ===== BUTTON VARIANTS ===== */
+.btn-outline-primary {
+  background: transparent;
+  color: var(--accent-cyan);
+  border: 1px solid var(--accent-cyan);
+}
+
+.btn-outline-primary:hover:not(:disabled) {
+  background: var(--accent-cyan);
+  color: #ffffff;
+}
+
+.btn-outline-danger {
+  background: transparent;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+.btn-outline-danger:hover:not(:disabled) {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+/* ===== SPECIALTY BUTTONS ===== */
+.btn-icon {
+  padding: 0.75rem;
+  width: auto;
+  aspect-ratio: 1;
+}
+
+.btn-loading {
+  position: relative;
+  color: transparent;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== LEGACY COMPATIBILITY ===== */
+/* These classes maintain compatibility with existing button styles */
+
+.login-button {
+  @extend .btn-primary;
+  padding: 14px 24px;
+  margin-top: 8px;
+}
+
+.admin-login-button {
+  @extend .btn-secondary;
+  padding: 12px 24px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.toggle-button {
+  @extend .btn-ghost;
+  padding: 8px;
+  font-size: 0.875rem;
+}
+
+.retry-button {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #b91c1c;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.retry-button:hover {
+  background: rgba(239, 68, 68, 0.18);
+}
+
+.btn-edit {
+  background: rgba(59, 130, 246, 0.12);
+  color: #1d4ed8;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-edit:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.btn-delete {
+  background: rgba(239, 68, 68, 0.12);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-delete:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .btn-sm {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-lg {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+  }
+}
+
+/*
+  CUSTOMIZATION EXAMPLES:
+
+  1. Modern Dark Theme:
+     --btn-primary-bg: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+     --btn-primary-text: #ffffff;
+
+  2. Minimalist Theme:
+     --btn-primary-bg: #000000;
+     --btn-primary-text: #ffffff;
+     --btn-border-radius: 0px;
+
+  3. Pastel Theme:
+     --btn-primary-bg: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+     --btn-primary-text: #92400e;
+
+  4. Rounded Theme:
+     --btn-border-radius: 24px;
+     --btn-padding: 1rem 2rem;
+*/
